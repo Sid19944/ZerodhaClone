@@ -15,6 +15,7 @@ const Menu = () => {
   useEffect(() => {
     const verify = async () => {
       if (!cookies.token) {
+        console.log("token not found");
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
       const { data } = await axios.post(
