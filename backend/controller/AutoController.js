@@ -30,11 +30,11 @@ module.exports.Singup = async (req, res) => {
 module.exports.Login = async (req, res, next) => {
   try {
     const { username, password } = req.body;
-    console.log(req.body.username);
+    // console.log(req.body.username);
     if (!username || !password) {
       return res.json({ message: "All fields are required" });
     }
-    const user = await UserModel.findOne({ username });
+    const user = await UserModel.findOne({ username : req.body.username });
     if (!user) {
       return res.json({ message: "Incorrect Username or password" });
     }
