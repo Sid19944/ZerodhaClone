@@ -32,8 +32,8 @@ const Menu = () => {
       setUsername(user);
       return status
         ? toast(`Hello ${user}`, { position: "top-right" })
-        : (removeCookie("token"),
-          navigate("https://zerodhaclone-1-nwt7.onrender.com/singup"));
+        : 
+          navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
     };
 
     verify();
