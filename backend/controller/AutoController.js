@@ -30,6 +30,7 @@ module.exports.Singup = async (req, res) => {
 module.exports.Login = async (req, res, next) => {
   try {
     const { username, password } = req.body;
+    console.log(req.body.username);
     if (!username || !password) {
       return res.json({ message: "All fields are required" });
     }
