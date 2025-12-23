@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Menu = () => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([null]);
+  const [cookies, removeCookie] = useCookies(["token"]);
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [isProfleDropdownOpen, setIsProfleDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
