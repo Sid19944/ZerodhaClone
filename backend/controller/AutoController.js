@@ -14,7 +14,7 @@ module.exports.Singup = async (req, res) => {
     res.cookie("token", token, {
       // withCredentials: true,
       httpOnly: true,
-      secure: true,
+      // secure: true,
       sameSite: "none",
     });
     res
@@ -43,7 +43,7 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       // withCredentials: true,
       httpOnly: true,
-      secure: true,
+      // secure: true,
       sameSite: "none",
     });
     res
