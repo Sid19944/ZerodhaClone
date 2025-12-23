@@ -47,7 +47,7 @@ function Login() {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("http://localhost:3002");
+          navigate("https://zerodhaclone-dashboard-8i8o.onrender.com");
         }, 1000);
       } else {
         handleError(message);
