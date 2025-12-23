@@ -11,14 +11,14 @@ module.exports.Singup = async (req, res) => {
     }
     const user = await UserModel.create({ email, username, password });
     const token = CreateAccessToken(user._id);
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      domain: ".onrender.com",
-      path : "/"
-    });
+    // res.cookie("token", token, {
+    //   withCredentials: true,
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "none",
+    //   domain: ".onrender.com",
+    //   path : "/"
+    // });
     res
       .status(201)
       .json({ message: "User signed in successfully", success: true, user });
@@ -42,14 +42,14 @@ module.exports.Login = async (req, res, next) => {
       return res.json({ message: "Incorrect Username or password" });
     }
     const token = CreateAccessToken(user._id);
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      domain: ".onrender.com",
-      path : "/"
-    });
+    // res.cookie("token", token, {
+    //   withCredentials: true,
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "none",
+    //   domain: ".onrender.com",
+    //   path : "/"
+    // });
     res
       .status(201)
       .json({ message: "User Logged in Successfuly", success: true });
