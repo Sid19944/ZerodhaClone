@@ -7,40 +7,36 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Menu = () => {
   const navigate = useNavigate();
-  // const [cookie, removeCookie] = useCookies(["token"]);
+  const [cookies, removeCookie] = useCookies([]);
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [isProfleDropdownOpen, setIsProfleDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
     const verify = async () => {
-      // if (!cookie.token) {
-      //   navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
-      // }
-      // const { data } = await axios.post(
-      //   "https://zerodhaclone-qij1.onrender.com",
-      //   {},
-      //   {
-      //     withCredentials: true,
-      //   }
-      // );
-      const { data } = await axios.get(
-        "https://zerodhaclone-qij1.onrender.com/verify",
-        { withCredentials: true }
+      if (!cookies.token) {
+        navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
+      }
+      const { data } = await axios.post(
+        "https://zerodhaclone-qij1.onrender.com",
+        {},
+        {
+          withCredentials: true,
+        }
       );
       const { status, user } = data;
       setUsername(user);
       return status
         ? toast(`Hello ${user}`, { position: "top-right" })
-        : 
-          navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
+        : (removeCookie("token"),
+          navigate("https://zerodhaclone-1-nwt7.onrender.com/singup"));
     };
 
     verify();
-  }, []);
+  }, [cookies]);
 
   const handleLogout = () => {
-    // removeCookie("token");
+    removeCookie("token");
     navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
   };
 
