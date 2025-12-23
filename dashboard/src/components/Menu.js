@@ -150,6 +150,7 @@ const Menu = () => {
           <p className="username">{username}</p>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
