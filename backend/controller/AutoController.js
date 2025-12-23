@@ -15,7 +15,7 @@ module.exports.Singup = async (req, res) => {
       // withCredentials: true,
       httpOnly: true,
       secure: true,
-      sameSite: "lax",
+      sameSite: "none",
     });
     res
       .status(201)
@@ -44,7 +44,7 @@ module.exports.Login = async (req, res, next) => {
       // withCredentials: true,
       httpOnly: true,
       secure: true,
-      sameSite: "lax",
+      sameSite: "none",
     });
     res
       .status(201)
