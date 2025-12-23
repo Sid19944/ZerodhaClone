@@ -43,7 +43,7 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       withCredentials: true,
       httpOnly: true,
-      secure: true,
+      secure: false,
       sameSite: "lax",
     });
     res
@@ -52,6 +52,6 @@ module.exports.Login = async (req, res, next) => {
     next();
   } catch (err) {
     console.error(err);
-    
+
   }
 };
