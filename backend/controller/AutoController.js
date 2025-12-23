@@ -14,8 +14,9 @@ module.exports.Singup = async (req, res) => {
     res.cookie("token", token, {
       // withCredentials: true,
       httpOnly: true,
-      // secure: true,
-      sameSite: "none",
+      secure: true,
+      sameSite: "lax",
+      domain : srv-d555sp15pdvs73bui1ag,
     });
     res
       .status(201)
@@ -43,8 +44,9 @@ module.exports.Login = async (req, res, next) => {
     res.cookie("token", token, {
       // withCredentials: true,
       httpOnly: true,
-      // secure: true,
-      sameSite: "none",
+      secure: true,
+      sameSite: "lax",
+      domain : srv-d555sp15pdvs73bui1ag,
     });
     res
       .status(201)
