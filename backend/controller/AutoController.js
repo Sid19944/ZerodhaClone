@@ -41,6 +41,7 @@ module.exports.Login = async (req, res, next) => {
     if (!auth) {
       return res.json({ message: "Incorrect Username or password" });
     }
+    console.log(user);
     const token = CreateAccessToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
