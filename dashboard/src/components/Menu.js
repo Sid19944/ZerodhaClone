@@ -18,7 +18,7 @@ const Menu = () => {
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
       const { data } = await axios.post(
-        "https://zerodhaclone-qij1.onrender.com/",
+        "https://zerodhaclone-qij1.onrender.com",
         {},
         {
           withCredentials: true,
