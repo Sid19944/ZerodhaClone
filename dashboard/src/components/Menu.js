@@ -40,7 +40,7 @@ const Menu = () => {
   }, []);
 
   const handleLogout = () => {
-    removeCookie("token");
+    // removeCookie("token");
     navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
   };
 
