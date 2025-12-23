@@ -14,7 +14,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0);
 
   const handleSellClick = () => {
-    axios.post("http://localhost:3000/newOrder", {
+    axios.post("https://zerodhaclone-qij1.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice * stockQuantity,
@@ -25,7 +25,7 @@ const SellActionWindow = ({ uid }) => {
 
   useEffect((uid) => {
     axios
-      .post("http://localhost:3000/sellorder", {
+      .post("https://zerodhaclone-qij1.onrender.com/sellorder", {
         name: uid,
       })
       .then((res) => {

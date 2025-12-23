@@ -35,7 +35,7 @@ function Singup() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/singup",
+        "https://zerodhaclone-qij1.onrender.com/singup",
         {
           ...inputValue,
         },

@@ -36,7 +36,7 @@ function Login() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/login",
+        "https://zerodhaclone-qij1.onrender.com/login",
         {
           ...inputValue,
         },

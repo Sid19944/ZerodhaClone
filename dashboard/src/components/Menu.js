@@ -18,7 +18,7 @@ const Menu = () => {
         navigate("http://localhost:3001/singup");
       }
       const { data } = await axios.post(
-        "http://localhost:3000/",
+        "https://zerodhaclone-qij1.onrender.com/",
         {},
         {
           withCredentials: true,
