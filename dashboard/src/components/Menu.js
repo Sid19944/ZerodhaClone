@@ -7,22 +7,26 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Menu = () => {
   const navigate = useNavigate();
-  const [cookie, removeCookie] = useCookies(["token"]);
+  // const [cookie, removeCookie] = useCookies(["token"]);
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [isProfleDropdownOpen, setIsProfleDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
     const verify = async () => {
-      if (!cookie.token) {
-        navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
-      }
-      const { data } = await axios.post(
-        "https://zerodhaclone-qij1.onrender.com",
-        {},
-        {
-          withCredentials: true,
-        }
+      // if (!cookie.token) {
+      //   navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
+      // }
+      // const { data } = await axios.post(
+      //   "https://zerodhaclone-qij1.onrender.com",
+      //   {},
+      //   {
+      //     withCredentials: true,
+      //   }
+      // );
+      const { data } = await axios.get(
+        "https://zerodhaclone-qij1.onrender.com/verify",
+        { withCredentials: true }
       );
       const { status, user } = data;
       setUsername(user);
@@ -33,7 +37,7 @@ const Menu = () => {
     };
 
     verify();
-  }, [cookie]);
+  }, []);
 
   const handleLogout = () => {
     removeCookie("token");
