@@ -25,7 +25,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3001", "http://localhost:3002"],
+    origin: ["https://zerodhaclone-1-nwt7.onrender.com", "http://localhost:3002"],
     credentials: true,
   })
 );

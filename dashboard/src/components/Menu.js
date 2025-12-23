@@ -15,7 +15,7 @@ const Menu = () => {
   useEffect(() => {
     const verify = async () => {
       if (!cookies.token) {
-        navigate("http://localhost:3001/singup");
+        navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
       const { data } = await axios.post(
         "https://zerodhaclone-qij1.onrender.com/",
@@ -28,7 +28,7 @@ const Menu = () => {
       setUsername(user);
       return status
         ? toast(`Hello ${user}`, { position: "top-right" })
-        : (removeCookie("token"), navigate("http://localhost:3001/singup"));
+        : (removeCookie("token"), navigate("https://zerodhaclone-1-nwt7.onrender.com/singup"));
     };
 
     verify();
@@ -36,7 +36,7 @@ const Menu = () => {
 
   const handleLogout = () => {
     removeCookie("token");
-    navigate("http://localhost:3001/singup");
+    navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
   };
 
   const handleMenuClick = (idx) => {
