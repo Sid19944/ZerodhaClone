@@ -16,8 +16,6 @@ module.exports.Singup = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      domain: ".onrender.com",
-      path : "/"
     });
     res
       .status(201)
@@ -49,8 +47,7 @@ module.exports.Login = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      domain: ".onrender.com",
-      path : "/"
+      
     });
     res
       .status(201)
