@@ -7,14 +7,14 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Menu = () => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(["token"]);
+  const [cookie, removeCookie] = useCookies(["token"]);
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [isProfleDropdownOpen, setIsProfleDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
     const verify = async () => {
-      if (!cookies.token) {
+      if (!cookie.token) {
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
       const { data } = await axios.post(
@@ -33,7 +33,7 @@ const Menu = () => {
     };
 
     verify();
-  }, [cookies]);
+  }, [cookie]);
 
   const handleLogout = () => {
     removeCookie("token");
