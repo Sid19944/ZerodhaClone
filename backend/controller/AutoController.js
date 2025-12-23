@@ -16,7 +16,6 @@ module.exports.Singup = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "lax",
-      domain : "https://zerodhaclone-dashboard-8i8o.onrender.com",
     });
     res
       .status(201)
@@ -46,7 +45,6 @@ module.exports.Login = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       sameSite: "lax",
-      domain : "https://zerodhaclone-dashboard-8i8o.onrender.com",
     });
     res
       .status(201)
@@ -54,6 +52,5 @@ module.exports.Login = async (req, res, next) => {
     next();
   } catch (err) {
     console.error(err);
-
   }
 };
