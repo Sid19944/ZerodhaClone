@@ -13,9 +13,9 @@ module.exports.Singup = async (req, res) => {
     const token = CreateAccessToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
-      // httpOnly: true,
-      // secure: true,
-      // sameSite: "none",
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
     });
     res
       .status(201)
@@ -42,14 +42,13 @@ module.exports.Login = async (req, res, next) => {
     const token = CreateAccessToken(user._id);
     res.cookie("token", token, {
       withCredentials: true,
-      // httpOnly: true,
-      // secure: true,
-      // sameSite: "none",
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
     });
     res
       .status(201)
       .json({ message: "User Logged in Successfuly", success: true });
-    next();
   } catch (err) {
     console.error(err);
   }
