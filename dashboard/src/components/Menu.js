@@ -15,11 +15,10 @@ const Menu = () => {
   useEffect(() => {
     const verify = async () => {
       if (!cookies.token) {
-        console.log("token not found");
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
       const { data } = await axios.post(
-        "https://zerodhaclone-qij1.onrender.com/",
+        "https://zerodhaclone-qij1.onrender.com",
         {},
         {
           withCredentials: true,
