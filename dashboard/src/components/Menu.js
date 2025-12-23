@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Menu = () => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(["token"]);
+  const [cookies, removeCookie] = useCookies();
   const [selectedMenu, setSelectedMenu] = useState(null);
   const [isProfleDropdownOpen, setIsProfleDropdownOpen] = useState(false);
   const [username, setUsername] = useState("");
@@ -17,7 +17,6 @@ const Menu = () => {
       if (!cookies.token) {
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
-      removeCookie("token");
       const { data } = await axios.post(
         "https://zerodhaclone-qij1.onrender.com",
         {},
@@ -29,7 +28,8 @@ const Menu = () => {
       setUsername(user);
       return status
         ? toast(`Hello ${user}`, { position: "top-right" })
-        : (removeCookie("token"), navigate("https://zerodhaclone-1-nwt7.onrender.com/singup"));
+        : (removeCookie("token"),
+          navigate("https://zerodhaclone-1-nwt7.onrender.com/singup"));
     };
 
     verify();
@@ -151,7 +151,7 @@ const Menu = () => {
           <p className="username">{username}</p>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
