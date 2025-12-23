@@ -17,6 +17,7 @@ const Menu = () => {
       if (!cookies.token) {
         navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
       }
+      removeCookie("token");
       const { data } = await axios.post(
         "https://zerodhaclone-qij1.onrender.com",
         {},
