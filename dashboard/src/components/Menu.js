@@ -33,7 +33,7 @@ const Menu = () => {
     };
 
     verify();
-  }, [cookies]);
+  }, []);
 
   const handleLogout = () => {
     res.removeCookie("token");
