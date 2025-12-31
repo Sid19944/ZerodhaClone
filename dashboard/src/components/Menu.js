@@ -13,10 +13,10 @@ const Menu = () => {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    if (!cookies.token) {
-      navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
-      return;
-    }
+    // if (!cookies.token) {
+    //   navigate("https://zerodhaclone-1-nwt7.onrender.com/singup");
+    //   return;
+    // }
     const verify = async () => {
       const { data } = await axios.post(
         "https://zerodhaclone-qij1.onrender.com",
@@ -33,7 +33,7 @@ const Menu = () => {
     };
 
     verify();
-  }, [cookies]);
+  }, []);
 
   const handleLogout = () => {
     cookies.removeCookie("token");
